@@ -10,7 +10,7 @@ RUN yum install -y nginx && \
     yum -y clean all --enablerepo='*'
 
 LABEL site = dc 
-LABEL cost_center = "10"
+LABEL cost_center = 10
 
 ENTRYPOINT ["nginx"]
 
