@@ -1,0 +1,24 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: simple-container-build
+  namespace: mytest
+  labels:
+    #cost_center: "27"
+    name: simple-container-build
+spec:
+  triggers:
+    - type: ConfigChange
+  source:
+    contextDir: "simple-docker-build/"
+    type: Git
+    git:
+      uri: 'https://github.com/gstephan76/DO180-apps.git'
+  strategy:
+    type: Docker
+    dockerStrategy:
+      dockerfilePath: "Containerfile"
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'simple-container-build:latest'
