@@ -2,7 +2,7 @@ apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
   name: simple-container-build
-  namespace: mytest
+  namespace: my-demo
   labels:
     #cost_center: "27"
     name: simple-container-build
